@@ -1,0 +1,96 @@
+/* ---------- Wrapping Elements ---------- */
+
+.calc-wrapper {
+    width: 60%;
+    max-width: 692px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.calc-container {
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* ---------- Results ---------- */
+
+h1#result {
+    font-size: 60px;
+    width: 100%;
+    text-align: right;
+    padding: 3% 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* ---------- Numbers ---------- */
+
+.number {
+    width: 31%;
+    text-align: center;
+    font-size: 24px;
+    color: #696969;
+    border-bottom: 2px solid #ccc;
+    padding: 2% 0%;
+    margin-bottom: 4%;
+    cursor: pointer;
+}
+
+.number-hover {
+    background: #ececec;
+    transition: ease .3s;
+    color: #000;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.number-clicked {
+    background: #888888;
+    transition: ease .3s;
+    border-radius: 3px 3px 3px 3px;
+    border-bottom: 2px solid #888888;
+}
+
+/* ---------- Operator ---------- */
+
+.operator {
+    border-bottom: 2px solid #8e8e8e;
+    color: #696969;
+    cursor: pointer;
+}
+
+.operator-hover {
+    background: #ececec;
+    color: #000;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.operator-clicked {
+  background: #FF9800;
+  transition: ease .3s;
+  border-radius: 3px 3px 3px 3px;
+  border-bottom: 2px solid #545454;
+}
+
+/* ---------- Equals ---------- */
+
+#equals {
+    width: 100%;
+    color: #FF9800;
+    border-bottom: 2px solid #FF9800;
+    cursor: pointer;
+}
+
+.equals-hover {
+    background: #FFCC80;
+    color: #EF6C00;
+    border-radius: 3px 3px 3px 3px;
+    transition: ease 0.3s;
+}
+
+.equals-clicked {
+    background: #FB8C00;
+    color: #fff !important; 
+    transition: ease 0.3s;
+}
