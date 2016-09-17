@@ -1,13 +1,24 @@
 $(document).ready(start);
 
-var result = 0;
+var total = 0
 
 function start() {
-  writeResult()
+  $('#numbers > div').not('#decimal, #clear').click(getNumberValue);
+  displayResult();
 }
 
-// displays the current result
+// retrieves the text value of the number div clicked and returns that value
 
-function writeResult() {
-  $('#result').text(result);
+function getNumberValue() {
+  var numberValue = $(this).text();
+  total = total + numberValue
+  displayResult();
+}
+
+function displayResult() {
+  $('#result').text(total);
+}
+
+function clearInitialTotal() {
+  $('#result').text('');
 }

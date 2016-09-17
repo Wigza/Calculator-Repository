@@ -3,14 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Tim's Calculator</title>
-
     <!-- CSS links -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
-
     <!-- Open Sans Google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-
     <!-- Javascript/Jquery -->
     <script src='http://code.jquery.com/jquery-latest.min.js'></script>
     <script type="text/javascript" src="js/button-interactivity.js"></script>
@@ -21,22 +18,27 @@
     <div class="calc-wrapper">
       <div class="calc-container">
         <h1 id="result"></h1>
-        <div class="number" id="one">1</div>
-        <div class="number" id="two">2</div>
-        <div class="number" id="three">3</div>
-        <div class="number" id="four">4</div>
-        <div class="number" id="five">5</div>
-        <div class="number" id="six">6</div>
-        <div class="number" id="seven">7</div>
-        <div class="number" id="eight">8</div>
-        <div class="number" id="nine">9</div>
-        <div class="number" id="zero">0</div>
-        <div class="number operator" id="decimal">.</div>
-        <div class="number operator" id="addition">+</div>
-        <div class="number operator" id="subtract">-</div>
-        <div class="number operator" id="multiply">x</div>
-        <div class="number operator" id="divide">/</div>
-        <div class="number operator" id="equals">=</div>
+        <div class="main-buttons" id="numbers">
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+          <div class="number">6</div>
+          <div class="number">7</div>
+          <div class="number">8</div>
+          <div class="number">9</div>
+          <div class="number">0</div>
+          <div class="number" id="decimal">.</div>
+          <div class="number" id="clear">C</div>
+        </div>
+        <div class="operator-buttons">
+          <div class="operator" id="addition">+</div>
+          <div class="operator" id="subtract">-</div>
+          <div class="operator" id="multiply">x</div>
+          <div class="operator" id="divide">/</div>
+        </div>
+        <div id="equals">=</div>
       </div>
     </div>
   </body>

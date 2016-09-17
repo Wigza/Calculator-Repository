@@ -5,9 +5,33 @@ function start() {
   $(".number").mousedown(buttonClicked);
   $(".number").mouseup(buttonUnClicked);
 
+  $(".operator").hover(operatorMouseOver, operatorMouseOff);
+  $(".operator").mousedown(opButtonClicked);
+  $(".operator").mouseup(opButtonUnClicked);
+
   $("#equals").hover(equalsHoverOn, equalsHoverOff);
   $("#equals").mousedown(equalsClicked);
   $("#equals").mouseup(equalsUnClicked);
+}
+
+// Operator button mouse up and down functions
+
+function opButtonClicked() {
+  $(this).addClass('operator-clicked')
+}
+
+function opButtonUnClicked() {
+  $(this).removeClass('operator-clicked')
+}
+
+// Hover function for the operator buttons
+
+function operatorMouseOver() {
+  $(this).addClass('operator-hover');
+}
+
+function operatorMouseOff() {
+  $(this).removeClass('operator-hover');
 }
 
 // Hover function for the number buttons
