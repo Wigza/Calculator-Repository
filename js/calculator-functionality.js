@@ -1,24 +1,52 @@
 $(document).ready(start);
 
-var total = 0
+// var resultCLear = 0
+var displayValue = 0
+var storedValue = 0
 
 function start() {
-  $('#numbers > div').not('#decimal, #clear').click(getNumberValue);
   displayResult();
+  runCalculator();
 }
 
-// retrieves the text value of the number div clicked and returns that value
+function runCalculator() {
+  $('#numbers > div').not('#decimal, #clear').click(getButtonValue);
+  $('#addition').click(addValue);
+  $('#equals').click(showTotalValue);
+  $('#equals').click(calculateResult);
+  $('#clear').click(clearInitialTotal);
+}
 
-function getNumberValue() {
-  var numberValue = $(this).text();
-  total = total + numberValue
+function calculateResult() {
+  var calculatedResult = parseInt(displayValue) + storedValue;
+  $('#result').text(calculatedResult);
+}
+
+function showTotalValue() {
+  $('#result').text()
+}
+
+function addValue() {
+  storedValue = parseInt(displayValue);
+  clearInitialTotal();
+}
+
+
+function getButtonValue() {
+  var buttonValue = $(this).text();
+  if(displayValue == 0) {
+    displayValue = buttonValue;
+  } else {
+    displayValue = displayValue + buttonValue;
+  }
   displayResult();
 }
 
 function displayResult() {
-  $('#result').text(total);
+  $('#result').text(displayValue);
 }
 
 function clearInitialTotal() {
-  $('#result').text('');
+  displayValue = 0
+  $('#result').text(displayValue);
 }
