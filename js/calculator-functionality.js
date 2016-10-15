@@ -1,8 +1,17 @@
 $(document).ready(start);
 
-// var resultCLear = 0
+// display variables for storing the number data users enter
 var displayValue = 0
 var storedValue = 0
+
+// variables that hold the operator values
+var addition = '+';
+var subtract = '-';
+var multiply = 'x';
+var divide = '/';
+
+// calculator result variable
+var calculatedResult = ''
 
 function start() {
   displayResult();
@@ -10,7 +19,8 @@ function start() {
 }
 
 function runCalculator() {
-  $('#numbers > div').not('#decimal, #clear').click(getButtonValue);
+  $('#numbers > div').not('#decimal, #clear').click(getNumberButtonValue);
+  $('#operators > div').click(getOperatorValue);
   $('#addition').click(addValue);
   $('#equals').click(showTotalValue);
   $('#equals').click(calculateResult);
@@ -20,6 +30,27 @@ function runCalculator() {
 function calculateResult() {
   var calculatedResult = parseInt(displayValue) + storedValue;
   $('#result').text(calculatedResult);
+  displayValue = calculatedResult;
+}
+
+function additionFunction() {
+  var result = storedValue + parseInt(displayValue);
+  return result
+}
+
+function subtractionFunction() {
+  var result = storedValue - parseInt(displayValue);
+  return result
+}
+
+function multiplyFunction() {
+  var result = (storedValue) * (parseInt(displayValue));
+  return result
+}
+
+function divisionFunction() {
+  var result = storedValue / parseInt(displayValue);
+  return result
 }
 
 function showTotalValue() {
@@ -31,8 +62,31 @@ function addValue() {
   clearInitialTotal();
 }
 
+function getOperatorValue() {
+  var operatorValue = $(this).text();
+  // runs through a series of if statements to
+  // determine the value of the operator butten
+  // pressed.
+  if (operatorValue == '+') {
+    operatorValue = addition;
+    additionFunction(operatorValue)
+  } else if (operatorValue == '-') {
+    operatorValue = subtract;
+    console.log(operatorValue);
+    return operatorValue;
+  } else if (operatorValue == 'x') {
+    operatorValue = multiply;
+    console.log(operatorValue);
+    return operatorValue;
+  } else if (operatorValue == '/') {
+    operatorValue = divide;
+    console.log(operatorValue);
+    return operatorValue;
+  }
+}
 
-function getButtonValue() {
+
+function getNumberButtonValue() {
   var buttonValue = $(this).text();
   if(displayValue == 0) {
     displayValue = buttonValue;
